@@ -1,0 +1,5 @@
+// Simplog global config file
+{
+    'title': 'Website title',
+    'subtitle': 'Website subtitle'
+}

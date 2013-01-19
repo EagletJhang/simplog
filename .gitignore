@@ -1,0 +1,11 @@
+# All html files are auto generated
+website/index.html
+website/articles/*.html
+website/pages/*.html
+website/categories/*.html
+
+# Config files
+website/site.json
+website/articles/articles.json
+website/pages/pages.json
+website/categories/categories.json
