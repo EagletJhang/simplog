@@ -16,7 +16,7 @@
     <body onload="prettyPrint()">
         <div id="header">
             <div id="header-inner">
-                <div id="title"><small>{</small> {%= TITLE %} <small>}</small></div>
+                <div id="title"><a href="/"><small>{</small> {%= TITLE %} <small>}</small></a></div>
                 <div id="subtitle">/&gt; {%= SUBTITLE %}</div>
             </div>
         </div>
@@ -26,7 +26,7 @@
                     <a href="{%= ARTICLE_LINK %}">{%= ARTICLE_TITLE %}</a>
                 </div>
                 <div id="article-meta">
-                    发布于 {%= ARTICLE_POSTED_ON %} | 最后更新 {%= ARTICLE_UPDATED_ON }
+                    作者 {%= ARTICLE_AUTHOR %} | 发布于 {%= ARTICLE_POSTED_ON %} | 最后更新 {%= ARTICLE_UPDATED_ON %}
                 </div>
                 <div id="article-content">
                     {%= ARTICLE_CONTENT %}
@@ -35,7 +35,7 @@
         </div>
         <div id="footer">
             <div id="footer-inner">
-                <p id="copyright">Copyright (c) {%= COPYRIGHT_BEGINYEAR %}-{%= COPYRIGHT_ENDYEAR %} {%= COPYRIGHT_OWNER %}. Powered by <a href="#">Simplog</a>.</p>
+                <p id="copyright">Copyright (c) {%= COPYRIGHT_BEGINYEAR %}-{%= COPYRIGHT_ENDYEAR %} {%= COPYRIGHT_OWNER %}. Powered by <a href="https://github.com/ericzhang-cn/simplog" target="_blank">Simplog</a>.</p>
                 <p id="icp"><a href="http://www.miibeian.gov.cn/" target="_blank">{%= COPYRIGHT_ICP %}</a></p>
             </div>
         </div>
