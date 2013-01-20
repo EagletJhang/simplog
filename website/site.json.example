@@ -1,5 +1,10 @@
-// Simplog global config file
 {
-    'title': 'Website title',
-    'subtitle': 'Website subtitle'
+    'title': 'Simplog',
+    'subtitle': 'Yet another blog',
+    'copyright': {
+        'owner': 'Simplog',
+        'beginYear': '2012',
+        'endYear': '2013',
+        'ICP': '京ICP备12345678-1号'
+    }
 }

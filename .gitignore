@@ -9,3 +9,6 @@ website/site.json
 website/articles/articles.json
 website/pages/pages.json
 website/categories/categories.json
+
+# Upload files
+website/uploads
