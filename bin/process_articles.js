@@ -1,4 +1,4 @@
-//'use strict';
+'use strict';
 
 // 引入必要模块
 var fs = require('fs');
@@ -12,7 +12,7 @@ var articlesConfig = require(siteRoot + '/articles/articles.json');
 if (fs.existsSync(siteRoot + '/articles/articles.template')) {
     var template = fs.readFileSync(siteRoot + '/articles/articles.template', 'utf8');
     var templateStat = fs.statSync(siteRoot + '/articles/articles.template', 'utf8');
-    console.log('[PROCESSING]Read article template complete.');
+    console.log('[PROCESSING]Read article template completed.');
 } else {
     console.log('[ERROR]Article template missing.');
     process.exit(1);
@@ -64,7 +64,7 @@ articlesConfig.articles.forEach(function(article) {
             t = t.replace(/{%= COPYRIGHT_ICP %}/g, globalConfig.copyright.ICP);
 
             fs.writeFileSync(siteRoot + '/articles/' + article.id + '.html', t);
-            console.log('[PROCESSING]Complete.');
+            console.log('[PROCESSING]Completed.');
         }
     }
 }); 
