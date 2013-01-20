@@ -1,10 +1,10 @@
-'use strict';
+//'use strict';
 
 // 引入必要模块
 var fs = require('fs');
 
 // 读取配置信息
-var siteRoot = '../website';
+var siteRoot = process.argv[2];
 var globalConfig = require(siteRoot + '/site.json');
 var articlesConfig = require(siteRoot + '/articles/articles.json');
 
@@ -12,8 +12,9 @@ var articlesConfig = require(siteRoot + '/articles/articles.json');
 if (fs.existsSync(siteRoot + '/articles/articles.template')) {
     var template = fs.readFileSync(siteRoot + '/articles/articles.template', 'utf8');
     var templateStat = fs.statSync(siteRoot + '/articles/articles.template', 'utf8');
+    console.log('[PROCESSING]Read article template complete.');
 } else {
-    console.log('ERROR: Article template missing.');
+    console.log('[ERROR]Article template missing.');
     process.exit(1);
 }
 
@@ -32,6 +33,7 @@ var updatedOn = yyyy + '-' + mm + '-' + dd;
 
 // 根据配置生成文章html页面
 articlesConfig.articles.forEach(function(article) {
+    console.log('[PROCESSING]Generate article: ' + article.id + '.');
     if (fs.existsSync(siteRoot + '/articles/' + article.id + '.html.meta')) {
         // 只生成meta文件mtime或模板文件的mtime晚于html文件mtime的文章
         var meta = fs.readFileSync(siteRoot + '/articles/' + article.id + '.html.meta');
@@ -42,6 +44,7 @@ articlesConfig.articles.forEach(function(article) {
             if (htmlStat.mtime.getTime() > templateStat.mtime.getTime() && 
                 htmlStat.mtime.getTime() > metaStat.mtime.getTime()) {
                 skip = true;
+                console.log('[PROCESSING]Not modified.');
             }
         }
 
@@ -61,6 +64,9 @@ articlesConfig.articles.forEach(function(article) {
             t = t.replace(/{%= COPYRIGHT_ICP %}/g, globalConfig.copyright.ICP);
 
             fs.writeFileSync(siteRoot + '/articles/' + article.id + '.html', t);
+            console.log('[PROCESSING]Complete.');
         }
     }
 }); 
+
+console.log('Done!');
