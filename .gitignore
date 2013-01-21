@@ -10,8 +10,9 @@ website/articles/articles.json
 website/pages/pages.json
 website/categories/categories.json
 
-# Meta files
-website/articles/*.html.meta
+# Text files
+website/articles/*.html.text
+website/articles/*.markdown.text
 
 # Upload files
 website/uploads
