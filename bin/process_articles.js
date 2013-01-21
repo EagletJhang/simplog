@@ -74,6 +74,8 @@ articlesConfig.articles.forEach(function (article) {
             fs.writeFileSync(siteRoot + '/articles/' + article.id + '.html', t);
             console.log('[PROCESSING]Completed.');
         }
+    } else {
+        console.log('[PROCESSING]No text file.');
     }
 }); 
 

@@ -23,6 +23,7 @@ if (fs.existsSync(siteRoot + '/index.template')) {
     process.exit(1);
 }
 
+console.log('[PROCESSING]Generate index.');
 // 根据配置生成index页面
 var t = template;
 t = t.replace(/{%= TITLE %}/g, globalConfig.title);
