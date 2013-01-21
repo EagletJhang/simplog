@@ -1,6 +1,9 @@
 ROOT=/Users/zhangyang/git/simplog/website
 
-all: articles
+all: index articles
+
+index:
+	node process_index.js $(ROOT)
 
 articles:
 	node process_articles.js $(ROOT)

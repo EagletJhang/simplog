@@ -6,13 +6,18 @@ a {
     text-decoration: none;
     color: #1E82CC;
 }
+a:hover {
+    text-decoration: underline;
+}
+p {
+    font-size: 18px;
+    line-height: 30px;
+}
 div#header {
     background-color: #000000;
     height: 50px;
 }
 div#header-inner {
-    background-color: #000000;
-    height: 44px;
     width: 1160px;
     margin: 0 auto;
     padding-top: 2px;
@@ -20,8 +25,6 @@ div#header-inner {
 div#main-inner {
     width: 1160px;
     margin: 0 auto;
-}
-div#title {
 }
 div#title a {
     font-weight: bold;
@@ -37,7 +40,7 @@ div#subtitle {
 div#footer-inner {
     border-top: 1px solid #000000;
     width: 1160px;
-    margin: 0 auto;
+    margin: 20px auto 0;
 }
 div#footer-inner p {
     text-align: right;
@@ -56,14 +59,29 @@ div#article-title {
 div#article-title a {
     color: #000000;
 }
-div#article-content p {
-    font-size: 18px;
-    line-height: 30px;
-}
 div#article-content p.picture {
     text-align: center;
 }
 div#article-meta {
     color: #999999;
     padding: 6px 0;
+}
+div.article-block {
+    border-top: 1px dashed #CCCCCC;
+}
+div.article-block p.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+div.article-block p.meta {
+    text-align: right;
+    color: #999999;
+}
+div#aboutme {
+    margin: 20px auto;
+}
+div#aboutme p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #666666;
 }
