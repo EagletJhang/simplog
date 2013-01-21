@@ -3,9 +3,9 @@
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="description" content=""/>
-        <meta name="keywords" content=""/>
-        <meta name="author" content=""/>
+        <meta name="description" content="{%= META_DESC %}"/>
+        <meta name="keywords" content="{%= META_KW %}"/>
+        <meta name="author" content="{%= META_AUTHOR %}"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
         <title>{%= TITLE %} - {%= ARTICLE_TITLE %}</title>
         <link rel="stylesheet" href="/assets/vendor/normalize.css"/>

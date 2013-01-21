@@ -16,7 +16,7 @@ if (fs.existsSync(siteRoot + '/site.json') && fs.existsSync(siteRoot + '/article
 // 检测并读取模板文件
 if (fs.existsSync(siteRoot + '/articles/articles.template')) {
     var template = fs.readFileSync(siteRoot + '/articles/articles.template', 'utf8');
-    var templateStat = fs.statSync(siteRoot + '/articles/articles.template', 'utf8');
+    var templateStat = fs.statSync(siteRoot + '/articles/articles.template');
     console.log('[PROCESSING]Read article template completed.');
 } else {
     console.log('[ERROR]Article template missing.');
@@ -41,7 +41,7 @@ articlesConfig.articles.forEach(function (article) {
     console.log('[PROCESSING]Generate article: ' + article.id + '.');
     if (fs.existsSync(siteRoot + '/articles/' + article.id + '.html.text')) {
         // 只生成text文件mtime或模板文件的mtime晚于html文件mtime的文章
-        var text = fs.readFileSync(siteRoot + '/articles/' + article.id + '.html.text');
+        var text = fs.readFileSync(siteRoot + '/articles/' + article.id + '.html.text', 'utf8');
         var textStat = fs.statSync(siteRoot + '/articles/' + article.id + '.html.text');
         var skip = false;
         if (fs.existsSync(siteRoot + '/articles/' + article.id + '.html')) {
@@ -56,6 +56,9 @@ articlesConfig.articles.forEach(function (article) {
         if (skip === false) {
             var t = template;
             t = t.replace(/{%= TITLE %}/g, globalConfig.title);
+            t = t.replace(/{%= META_AUTHOR %}/g, globalConfig.meta.author);
+            t = t.replace(/{%= META_KW %}/g, globalConfig.meta.keywords.join(','));
+            t = t.replace(/{%= META_DESC %}/g, article.abstract);
             t = t.replace(/{%= SUBTITLE %}/g, globalConfig.subtitle);
             t = t.replace(/{%= ARTICLE_TITLE %}/g, article.title);
             t = t.replace(/{%= ARTICLE_AUTHOR %}/g, article.author);

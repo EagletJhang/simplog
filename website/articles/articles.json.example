@@ -1,10 +1,20 @@
 {
     "articles": [
         {
-            "id": "algorithms-for-cardinality-estimation-part-iv",
-            "title": "解读Cardinality Estimation算法（第四部分：HyperLogLog Counting及Adaptive Counting）",
-            "postedOn": "2012-01-09",
-            "author": "张洋"
-        }
+            "id": "article-2",
+            "title": "第二篇文章",
+            "postedOn": "2013-01-06",
+            "author": "Bob",
+            "tags": ["football", "basketball"],
+            "abstract": "这是第二篇文章"
+        },
+        {
+            "id": "article-1",
+            "title": "第一篇文章",
+            "postedOn": "2013-01-01",
+            "author": "Alice",
+            "tags": ["apple", "orange"],
+            "abstract": "这是第一篇文章"
+        },
     ]
 }
