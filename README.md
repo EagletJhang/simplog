@@ -1,4 +1,1 @@
-simplog
-=======
-
-Simpl[e B]log
+简单的静态博客搭建系统
