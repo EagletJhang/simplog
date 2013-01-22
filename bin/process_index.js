@@ -5,9 +5,13 @@ var fs = require('fs');
 
 // 读取配置信息
 var siteRoot = process.argv[2];
-if (fs.existsSync(siteRoot + '/site.json') && fs.existsSync(siteRoot + '/articles/articles.json')) {
+if (fs.existsSync(siteRoot + '/site.json') && 
+    fs.existsSync(siteRoot + '/articles/articles.json') && 
+    fs.existsSync(siteRoot + '/categories/categories.json')) {
+
     var globalConfig = require(siteRoot + '/site.json');
     var articlesConfig = require(siteRoot + '/articles/articles.json');
+    var categoriesConfig = require(siteRoot + '/categories/categories.json');
 } else {
     console.log('[ERROR]Config files missing.');
     process.exit(1);
@@ -37,12 +41,26 @@ t = t.replace(/{%= COPYRIGHT_ENDYEAR %}/g, globalConfig.copyright.endYear);
 t = t.replace(/{%= COPYRIGHT_OWNER %}/g, globalConfig.copyright.owner);
 t = t.replace(/{%= COPYRIGHT_ICP %}/g, globalConfig.copyright.ICP);
 
+var categoryBlocks = '';
+categoriesConfig.categories.forEach(function (category) {
+    categoryBlocks += '<li><a href="/categories/' + category.id + '.html">' + category.name + '</a></li>';
+});
+t = t.replace(/{%= CATEGORIES %}/g, categoryBlocks);
+
 var articleBlocks = '';
 articlesConfig.articles.forEach(function (article) {
     articleBlocks += '<div class="article-block">';
     articleBlocks += '<p class="title"><a href="/articles/' + article.id + '.html">' + article.title + '</a></p>';
     articleBlocks += '<p class="abstract">&lt;摘要&gt;: ' + article.abstract + '</p>';
-    articleBlocks += '<p class="meta">作者 ' + article.author + ' | 发布于 ' + article.postedOn + '</p>';
+
+    var categoryName = '';
+    categoriesConfig.categories.forEach(function (category) {
+        if (category.id === article.category) {
+            categoryName = category.name;
+        }
+    });
+
+    articleBlocks += '<p class="meta">作者 ' + article.author + ' | 发布于 ' + article.postedOn + ' | 分类 <a href="/categories/' + article.category + '.html">' + categoryName + '</a></p>';
     articleBlocks += '</div>';
 });
 t = t.replace(/{%= ARTICLES %}/g, articleBlocks);
