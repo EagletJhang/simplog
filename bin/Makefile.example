@@ -1,0 +1,15 @@
+ROOT=/path/to/your/website/root
+
+all: index articles
+
+index:
+	node process_index.js $(ROOT)
+
+articles:
+	node process_articles.js $(ROOT)
+
+clean:
+	rm -f $(ROOT)/index.html
+	rm -f $(ROOT)/articles/*.html
+	rm -f $(ROOT)/pages/*.html
+	rm -f $(ROOT)/categories/*.html
