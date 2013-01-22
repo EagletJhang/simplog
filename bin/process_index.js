@@ -14,9 +14,9 @@ if (fs.existsSync(siteRoot + '/site.json') && fs.existsSync(siteRoot + '/article
 }
 
 // 检测并读取模板文件
-if (fs.existsSync(siteRoot + '/index.template')) {
-    var template = fs.readFileSync(siteRoot + '/index.template', 'utf8');
-    var templateStat = fs.statSync(siteRoot + '/index.template');
+if (fs.existsSync('../skeleton/index.template')) {
+    var template = fs.readFileSync('../skeleton/index.template', 'utf8');
+    var templateStat = fs.statSync('../skeleton/index.template');
     console.log('[PROCESSING]Read index template completed.');
 } else {
     console.log('[ERROR]Index template missing.');
