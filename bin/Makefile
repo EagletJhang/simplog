@@ -4,10 +4,10 @@ SITE_ROOT=/Users/zhangyang/git/blog.codinglabs.org
 all: index articles
 
 index:
-	node process_index.js $(SKEL_ROOT) $(SITE_ROOT)
+	node process_index.js $(SITE_ROOT)
 
 articles:
-	node process_articles.js $(SKEL_ROOT) $(SITE_ROOT)
+	node process_articles.js $(SITE_ROOT)
 
 clean:
 	rm -f $(SITE_ROOT)/index.html
