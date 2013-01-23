@@ -23,7 +23,6 @@
         <div id="main">
             <div id="main-inner">
                 <div id="aboutme"><p>&lt;关于我&gt;: {%= ABOUT_ME %}</p></div>
-                <div id="categories"><ul>{%= CATEGORIES %}</ul><div style="clear:both;"></div></div>
                 <div id="article-blocks">{%= ARTICLES %}</div>
             </div>
         </div>
