@@ -44,7 +44,7 @@ articlesConfig.articles.forEach(function (article) {
     articleBlocks += '<div class="article-block">';
     articleBlocks += '<p class="title"><a href="/articles/' + article.id + '.html">' + article.title + '</a></p>';
     articleBlocks += '<p class="abstract">&lt;摘要&gt;: ' + article.abstract + '</p>';
-    articleBlocks += '<p class="meta">作者 ' + article.author + ' | 发布于 ' + article.postedOn + ' | 分类 ' + article.category + '</p>';
+    articleBlocks += '<p class="meta">作者 ' + article.author + ' | 发布于 ' + article.postedOn + '</p>';
     articleBlocks += '</div>';
 });
 t = t.replace(/{%= ARTICLES %}/g, articleBlocks);
