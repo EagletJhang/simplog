@@ -32,7 +32,7 @@ var t = template;
 t = t.replace(/{%= TITLE %}/g, globalConfig.rss.title);
 t = t.replace(/{%= LINK %}/g, globalConfig.link);
 t = t.replace(/{%= DESC %}/g, globalConfig.rss.desc);
-t = t.replace(/{%= LAST_BUILD_DATE %}/g, moment.utc().format('ddd, DD MMM YYYY HH:mm:ss') + ' GMT');
+t = t.replace(/{%= LAST_BUILD_DATE %}/g, moment.utc().format('ddd, DD MMM YYYY') + ' 00:00:00 GMT');
 t = t.replace(/{%= LANG %}/g, globalConfig.rss.lang);
 
 var items = '';

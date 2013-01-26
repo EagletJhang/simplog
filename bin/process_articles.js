@@ -14,9 +14,9 @@ if (fs.existsSync(siteRoot + '/site.json') && fs.existsSync(siteRoot + '/article
 }
 
 // 检测并读取模板文件
-if (fs.existsSync('../skeleton/articles/articles.template')) {
-    var template = fs.readFileSync('../skeleton/articles/articles.template', 'utf8');
-    var templateStat = fs.statSync('../skeleton/articles/articles.template');
+if (fs.existsSync(siteRoot + '/articles/articles.template')) {
+    var template = fs.readFileSync(siteRoot + '/articles/articles.template', 'utf8');
+    var templateStat = fs.statSync(siteRoot + '/articles/articles.template');
     console.log('[PROCESSING]Read article template completed.');
 } else {
     console.log('[ERROR]Article template missing.');
