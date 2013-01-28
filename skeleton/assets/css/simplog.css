@@ -1,6 +1,5 @@
 body {
-    background-color: #FEFEFE;
-    font-family: 'lucida grande',Tahoma,Helvetica,Arial,sans-serif; 
+    font-family: 'lucida grande',Arial,sans-serif; 
 }
 a {
     text-decoration: none;
@@ -24,12 +23,12 @@ div#header {
     height: 50px;
 }
 div#header-inner {
-    width: 960px;
+    width: 70%;
     margin: 0 auto;
     padding-top: 2px;
 }
 div#main-inner {
-    width: 960px;
+    width: 70%;
     margin: 0 auto;
 }
 div#title a {
@@ -45,7 +44,7 @@ div#subtitle {
 }
 div#footer-inner {
     border-top: 1px solid #0099CC;
-    width: 960px;
+    width: 70%;
     margin: 20px auto 0;
 }
 div#footer-inner p {
@@ -95,4 +94,8 @@ div#rss {
     margin: 20px auto;
     border-bottom: 1px dashed #CCCCCC;
     text-align: right;
+}
+pre.prettyprint {
+    padding: 10px 20px;
+    font-family: Monaco,Consolas,'Lucida Console','Liberation Mono','DejaVu Sans Mono','Bitstream Vera Sans Mono','Courier New','宋体';
 }
