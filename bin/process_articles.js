@@ -71,6 +71,12 @@ articlesConfig.articles.forEach(function (article) {
             t = t.replace(/{%= COPYRIGHT_OWNER %}/g, globalConfig.copyright.owner);
             t = t.replace(/{%= COPYRIGHT_ICP %}/g, globalConfig.copyright.ICP);
 
+            var tags = '';
+            article.tags.forEach(function (tag) {
+                tags += '<a class="tag" href="/tag.html#' + tag + '">' + tag + '</a>';
+            });
+            t = t.replace(/{%= ARTICLE_TAGS %}/g, tags);
+
             fs.writeFileSync(siteRoot + '/articles/' + article.id + '.html', t);
             console.log('[PROCESSING]Completed.');
         }
