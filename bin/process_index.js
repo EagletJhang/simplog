@@ -2,6 +2,7 @@
 
 // 引入必要模块
 var fs = require('fs');
+var _ = require('./underscore');
 
 // 读取配置信息
 var siteRoot = process.argv[2];
@@ -31,13 +32,28 @@ var t = template;
 t = t.replace(/{%= TITLE %}/g, globalConfig.title);
 t = t.replace(/{%= SUBTITLE %}/g, globalConfig.subtitle);
 t = t.replace(/{%= META_AUTHOR %}/g, globalConfig.meta.author);
-t = t.replace(/{%= META_KW %}/g, globalConfig.meta.keywords.join(','));
 t = t.replace(/{%= META_DESC %}/g, globalConfig.meta.description);
 t = t.replace(/{%= ABOUT_ME %}/g, globalConfig.master.about);
 t = t.replace(/{%= COPYRIGHT_BEGINYEAR %}/g, globalConfig.copyright.beginYear);
 t = t.replace(/{%= COPYRIGHT_ENDYEAR %}/g, globalConfig.copyright.endYear);
 t = t.replace(/{%= COPYRIGHT_OWNER %}/g, globalConfig.copyright.owner);
 t = t.replace(/{%= COPYRIGHT_ICP %}/g, globalConfig.copyright.ICP);
+
+var m = {};
+articlesConfig.articles.forEach(function (article) {
+    article.tags.forEach(function (tag) {
+        if (! _.has(m, tag)) {
+            m[tag] = [];
+        }
+        m[tag].push(article);
+    });
+});
+var tagCloud = '';
+_.keys(m).forEach(function (tag) {
+    tagCloud += '<a href="/tag.html#' + tag + '">' + tag + ' <span class="count">×' + m[tag].length + '</span></a>';
+});
+t = t.replace(/{%= TAG_CLOUD %}/g, tagCloud);
+t = t.replace(/{%= META_KW %}/g, _.keys(m).join(','));
 
 var articleBlocks = '';
 articlesConfig.articles.forEach(function (article) {
