@@ -2,6 +2,7 @@
 
 // 引入必要模块
 var fs = require('fs');
+var markdown = require('./markdown');
 
 // 读取配置信息
 var siteRoot = process.argv[2];
@@ -39,10 +40,21 @@ var updatedOn = yyyy + '-' + mm + '-' + dd;
 // 根据配置生成文章html页面
 articlesConfig.articles.forEach(function (article) {
     console.log('[PROCESSING]Generate article: ' + article.id + '.');
+    var ext = '';
     if (fs.existsSync(siteRoot + '/articles/' + article.id + '.html.text')) {
+        ext = 'html';
+    } else if (fs.existsSync(siteRoot + '/articles/' + article.id + '.markdown.text')) {
+        ext = 'markdown';
+    }
+    if (ext !== '') {
         // 只生成text文件mtime或模板文件的mtime晚于html文件mtime的文章
-        var text = fs.readFileSync(siteRoot + '/articles/' + article.id + '.html.text', 'utf8');
-        var textStat = fs.statSync(siteRoot + '/articles/' + article.id + '.html.text');
+        var text = fs.readFileSync(siteRoot + '/articles/' + article.id + '.' + ext + '.text', 'utf8');
+        var textStat = fs.statSync(siteRoot + '/articles/' + article.id + '.' + ext + '.text');
+
+        if (ext === 'markdown') {
+            text = markdown.toHTML(text);
+        }
+
         var skip = false;
         if (fs.existsSync(siteRoot + '/articles/' + article.id + '.html')) {
             var htmlStat = fs.statSync(siteRoot + '/articles/' + article.id + '.html');
