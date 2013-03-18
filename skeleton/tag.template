@@ -7,7 +7,7 @@
         <meta name="keywords" content="{%= META_KW %}"/>
         <meta name="author" content="{%= META_AUTHOR %}"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-        <title>{%= TITLE %} - {%= ARTICLE_TITLE %}</title>
+        <title>{%= TITLE %} - {%= SUBTITLE %}</title>
         <link rel="stylesheet" href="/assets/vendor/normalize.css"/>
         <link rel="stylesheet" href="/assets/vendor/prettify.css"/>
         <link rel="stylesheet" href="/assets/css/simplog.css"/>
@@ -23,18 +23,8 @@
         </div>
         <div id="main">
             <div id="main-inner">
-                <div id="article-title">
-                    <a href="{%= ARTICLE_LINK %}">{%= ARTICLE_TITLE %}</a>
-                </div>
-                <div id="article-meta">
-                    作者 {%= ARTICLE_AUTHOR %} | 发布于 {%= ARTICLE_POSTED_ON %} | 最后更新 {%= ARTICLE_UPDATED_ON %}
-                </div>
-                <div id="article-tags">
-                    {%= ARTICLE_TAGS %}
-                </div>
-                <div id="article-content">
-                    {%= ARTICLE_CONTENT %}
-                </div>
+                <div id="tag-cloud">{%= TAG_CLOUD %}<div style="clear:both;"></div></div>
+                <div id="tag-index">{%= TAG_INDEX %}</div>
             </div>
         </div>
         <div id="footer">

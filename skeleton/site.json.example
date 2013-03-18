@@ -1,6 +1,7 @@
 {
     "title": "Simplog",
     "subtitle": "Yet another blog",
+    "link": "http://yoursite",
     "meta": {
         "description": "简单的静态博客搭建系统",
         "keywords": ["Simplog","简单","博客"],
@@ -8,9 +9,15 @@
     },
     "master": {
         "name": "",
-        "description": "",
+        "about": "",
         "email": "",
         "weibo": ""
+    },
+    "rss": {
+        "title": "CodingLabs",
+        "desc": "keep coding, keep foolish",
+        "lang": "zh-cn",
+        "max": 20
     },
     "copyright": {
         "owner": "Simplog",

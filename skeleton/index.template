@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="/assets/vendor/normalize.css"/>
         <link rel="stylesheet" href="/assets/vendor/prettify.css"/>
         <link rel="stylesheet" href="/assets/css/simplog.css"/>
+        <link rel="shortcut icon" href="/fav.ico"/>
         <script type="text/javascript" src="/assets/vendor/prettify.js"></script>
     </head>
     <body onload="prettyPrint()">
@@ -24,12 +25,13 @@
             <div id="main-inner">
                 <div id="rss"><a href="/rss.xml"><img alt="RSS订阅" src="/assets/images/icon-rss.png"/></a></div>
                 <div id="aboutme"><p>&lt;关于我&gt;: {%= ABOUT_ME %}</p></div>
+                <div id="tag-cloud">{%= TAG_CLOUD %}<div style="clear:both;"></div></div>
                 <div id="article-blocks">{%= ARTICLES %}</div>
             </div>
         </div>
         <div id="footer">
             <div id="footer-inner">
-                <p id="copyright">Copyright (c) {%= COPYRIGHT_BEGINYEAR %}-{%= COPYRIGHT_ENDYEAR %} {%= COPYRIGHT_OWNER %}. Powered by <a href="https://github.com/ericzhang-cn/simplog" target="_blank">Simplog</a>.</p>
+                <p id="copyright">Copyright (c) {%= COPYRIGHT_BEGINYEAR %}-{%= COPYRIGHT_ENDYEAR %} {%= COPYRIGHT_OWNER %}. <span id="madeonmymac" style="color:#999999;">Made on my Mac </span></p>
                 <p id="icp"><a href="http://www.miibeian.gov.cn/" target="_blank">{%= COPYRIGHT_ICP %}</a></p>
             </div>
         </div>
