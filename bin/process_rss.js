@@ -3,6 +3,7 @@
 // 引入必要模块
 var fs = require('fs');
 var moment = require('./moment');
+var markdown = require('./markdown');
 
 // 读取配置信息
 var siteRoot = process.argv[2];
@@ -32,7 +33,7 @@ var t = template;
 t = t.replace(/{%= TITLE %}/g, globalConfig.rss.title);
 t = t.replace(/{%= LINK %}/g, globalConfig.link);
 t = t.replace(/{%= DESC %}/g, globalConfig.rss.desc);
-t = t.replace(/{%= LAST_BUILD_DATE %}/g, moment.utc().format('ddd, DD MMM YYYY') + ' 00:00:00 GMT');
+t = t.replace(/{%= LAST_BUILD_DATE %}/g, moment().format('ddd, DD MMM YYYY') + ' 00:00:00 GMT');
 t = t.replace(/{%= LANG %}/g, globalConfig.rss.lang);
 
 var items = '';
@@ -41,12 +42,17 @@ articlesConfig.articles.slice(0, globalConfig.rss.max).forEach(function (article
     items += '<title>' + article.title + '</title>\n';
     items += '<link>' + globalConfig.link + '/articles/' + article.id + '.html</link>\n';
     items += '<guid>' + globalConfig.link + '/articles/' + article.id + '.html</guid>\n';
-    items += '<pubDate>' + moment(article.postedOn).utc().format('ddd, DD MMM YYYY HH:mm:ss') + ' GMT</pubDate>\n';
+    items += '<author>' + globalConfig.master.email + ' ' + globalConfig.master.name + '</author>\n';
+    items += '<pubDate>' + moment(article.postedOn).format('ddd, DD MMM YYYY HH:mm:ss') + ' GMT</pubDate>\n';
 
     var content = '';
     if (fs.existsSync(siteRoot + '/articles/' + article.id + '.html.text')) {
         content = fs.readFileSync(siteRoot + '/articles/' + article.id + '.html.text', 'utf8');
+    } else if (fs.existsSync(siteRoot + '/articles/' + article.id + '.markdown.text')) {
+        content = fs.readFileSync(siteRoot + '/articles/' + article.id + '.markdown.text', 'utf8');
+        content = markdown.toHTML(content);
     }
+
     content = content.replace(/&(?!\w+;)/g, '&amp;')
                      .replace(/</g, '&lt;')
                      .replace(/>/g, '&gt;')
