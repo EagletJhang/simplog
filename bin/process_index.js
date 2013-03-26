@@ -50,7 +50,10 @@ articlesConfig.articles.forEach(function (article) {
 });
 var tagCloud = '';
 _.keys(m).forEach(function (tag) {
-    tagCloud += '<a href="/tag.html#' + tag + '">' + tag + ' <span class="count">×' + m[tag].length + '</span></a>';
+    //首页只展示数量大于2的Tag
+    if (m[tag].length >= 2) {
+        tagCloud += '<a href="/tag.html#' + tag + '">' + tag + ' <span class="count">×' + m[tag].length + '</span></a>';
+    }
 });
 t = t.replace(/{%= TAG_CLOUD %}/g, tagCloud);
 t = t.replace(/{%= META_KW %}/g, _.keys(m).join(','));
