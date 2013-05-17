@@ -14,8 +14,8 @@
         "weibo": ""
     },
     "rss": {
-        "title": "CodingLabs",
-        "desc": "keep coding, keep foolish",
+        "title": "Simplog",
+        "desc": "Yet another blog",
         "lang": "zh-cn",
         "max": 20
     },
