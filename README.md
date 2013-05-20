@@ -1,4 +1,4 @@
-simplog是一个非常简单的博客搭建工具，与Wordpress等动态博客系统不同，simplog不使用数据库，也不会部署任何动态脚本，而是通过元配置文件（json格式），元文本（html或markdown格式）以及模板文件生成一个全静态站点。用户可以通过自己方便的方式（例如git）将生成好的静态站点部署到相应位置。
+simplog是一个非常简单的博客搭建工具，与wordpress等动态博客系统不同，simplog不使用数据库，也不会部署任何动态脚本，而是通过元配置文件（json格式），元文本（html或markdown格式）以及模板文件生成一个全静态站点。用户可以通过自己方便的方式（例如git）将生成好的静态站点部署到相应位置。
 
 例子见：[http://blog.codinglabs.org](http://blog.codinglabs.org)
 
@@ -13,31 +13,31 @@ simplog是一个非常简单的博客搭建工具，与Wordpress等动态博客�
 
 5. 打开siteroot/articles/articles.json，删除其中内容，修改为：
 
-    {
-        "articles": [
-            {
-                "id": "helloworld",
-                "title": "Hello World",
-                "postedOn": "2013-01-01",
-                "author": "My Name",
-                "tags": ["hello", "world"],
-                "category": "",
-                "abstract": "This is my first article!"
-            }
-        ]
-    }
+	{
+		"articles": [
+			{
+				"id": "helloworld",
+				"title": "Hello World",
+				"postedOn": "2013-01-01",
+				"author": "My Name",
+				"tags": ["hello", "world"],
+				"category": "",
+				"abstract": "This is my first article!"
+			}
+		]
+	}
 
 6. 进入simplog/bin/目录，将其中的Makefile.example重命名为Makefile。
 
 7. 打开Makefile，将第一行
 
-    ROOT=/path/to/your/website/root
+	ROOT=/path/to/your/website/root
 
 改为指向siteroot目录。
 
 8. 运行如下命令
 
-    make
+	make
 
 即可在siteroot下生成整个网站。
 
