@@ -12,33 +12,34 @@ simplog是一个非常简单的博客搭建工具，与wordpress等动态博客�
 4. 建立siteroot/articles/helloworld.markdown.txt文件，并在其中输入任意内容。
 
 5. 打开siteroot/articles/articles.json，删除其中内容，修改为：
-
-	{
-		"articles": [
-			{
-				"id": "helloworld",
-				"title": "Hello World",
-				"postedOn": "2013-01-01",
-				"author": "My Name",
-				"tags": ["hello", "world"],
-				"category": "",
-				"abstract": "This is my first article!"
-			}
-		]
-	}
+```javascript
+{
+    "articles": [
+        {
+            "id": "helloworld",
+            "title": "Hello World",
+            "postedOn": "2013-01-01",
+            "author": "My Name",
+            "tags": ["hello", "world"],
+            "category": "",
+            "abstract": "This is my first article!"
+        }
+    ]
+}
+```
 
 6. 进入simplog/bin/目录，将其中的Makefile.example重命名为Makefile。
 
 7. 打开Makefile，将第一行
-
+```bash
 	ROOT=/path/to/your/website/root
-
+```
 改为指向siteroot目录。
 
 8. 运行如下命令
-
+```bash
 	make
-
+```
 即可在siteroot下生成整个网站。
 
 9. 将siteroot部署到web服务器上即可访问。
