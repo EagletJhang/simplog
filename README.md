@@ -13,19 +13,19 @@ simplog是一个非常简单的博客搭建工具，与wordpress等动态博客�
 
 5. 打开siteroot/articles/articles.json，删除其中内容，修改为：
 ```javascript
-{
-    "articles": [
-        {
-            "id": "helloworld",
-            "title": "Hello World",
-            "postedOn": "2013-01-01",
-            "author": "My Name",
-            "tags": ["hello", "world"],
-            "category": "",
-            "abstract": "This is my first article!"
-        }
-    ]
-}
+    {
+        "articles": [
+            {
+                "id": "helloworld",
+                "title": "Hello World",
+                "postedOn": "2013-01-01",
+                "author": "My Name",
+                "tags": ["hello", "world"],
+                "category": "",
+                "abstract": "This is my first article!"
+            }
+        ]
+    }
 ```
 
 6. 进入simplog/bin/目录，将其中的Makefile.example重命名为Makefile。
@@ -53,19 +53,15 @@ simplog是一个非常简单的博客搭建工具，与wordpress等动态博客�
 ### 文章元配置
 文章源配置文件为siteroot/articles/articles.json，其中主要配置项为数组“articles”，这个数组的每一个元素对应一篇文章。各配置项如下：
 
-id - 文章唯一标识，只能是字母、数字或“-”，全站不可重复
-
-title - 文章标题
-
-postedOn - 文章发表时间
-
-author - 作者
-
-tags - 标签数组
-
-category - 文章分类
-
-abstract - 文章摘要
+```bash
+    id - 文章唯一标识，只能是字母、数字或“-”，全站不可重复
+    title - 文章标题
+    postedOn - 文章发表时间
+    author - 作者
+    tags - 标签数组
+    category - 文章分类
+    abstract - 文章摘要
+```
 
 ### 元文本
 原文本是文章的主体，可以是html或markdown格式，统一放在siteroot/articles/下。
