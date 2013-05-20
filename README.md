@@ -110,7 +110,12 @@ make clean
 ## 其它说明
 ### 关于自定义样式
 simplog没有提供任何皮肤、模板之类的概念或机制，整个站点只有一个css文件位于siteroot/assets/css/simplog.css，可以配合模板文件（各个.template文件）随便修改。
+
 ### 关于插件
 simplog没有插件机制，但默认支持代码高亮（通过google-code-prettify实现）和LaTeX数学公式渲染（通过MathJax实现）。
+
 ### 关于部署
 推荐使用github部署，当然你可以用任何方式将生成的站点更新到web服务器相应目录下。
+
+### 更多参考
+关于这份文档没有详尽之处，可以参考[https://github.com/ericzhang-cn/blog.codinglabs.org](https://github.com/ericzhang-cn/blog.codinglabs.org)。这个项目是我用simplog生成的博客，其中包含了相关的配置。
