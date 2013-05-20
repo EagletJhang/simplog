@@ -62,7 +62,7 @@ abstract - 文章摘要
 ```
 
 ### 元文本
-原文本是文章的主体，可以是html或markdown格式，统一放在siteroot/articles/下。
+元文本是文章的主体，可以是html或markdown格式，统一放在siteroot/articles/下。
 
 文件命名必须与文章元配置中的id匹配。假设文章id为“my-first-article”，html文件命名为“my-first-article.html.text”，markdown文件命名为“my-first-article.markdown.text”。注意html文件只需包含文章主体的html标签，不需包含head、body等标签内容。
 
