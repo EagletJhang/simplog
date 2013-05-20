@@ -81,7 +81,7 @@ abstract - 文章摘要
 
 + 文章页
 ```bash
-    http(s)://yourdomain/aritcles/[id].html
+    http(s)://yourdomain/articles/[id].html
 ```
 文章页面显示文章主要内容。
 
@@ -90,3 +90,9 @@ abstract - 文章摘要
     http(s)://yourdomain/rss.xml
 ```
 可以通过这个url订阅你的博客。
+
+## 命令列表
+```bash
+# 生成整个网站
+make
+```
