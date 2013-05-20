@@ -46,24 +46,47 @@ simplog是一个非常简单的博客搭建工具，与wordpress等动态博客�
 
 ## 配置说明
 ### 网站元配置
-网站元配置文件为siteroot/site.json，网站标题等全局配置在这个文件中修改。各配置项说明如下：
-
-（TODO）
+网站元配置文件为siteroot/site.json，网站标题等全局配置在这个文件中修改。
 
 ### 文章元配置
 文章源配置文件为siteroot/articles/articles.json，其中主要配置项为数组“articles”，这个数组的每一个元素对应一篇文章。各配置项如下：
 
 ```bash
-    id - 文章唯一标识，只能是字母、数字或“-”，全站不可重复
-    title - 文章标题
-    postedOn - 文章发表时间
-    author - 作者
-    tags - 标签数组
-    category - 文章分类
-    abstract - 文章摘要
+id - 文章唯一标识，只能是字母、数字或“-”，全站不可重复
+title - 文章标题
+postedOn - 文章发表时间
+author - 作者
+tags - 标签数组
+category - 文章分类
+abstract - 文章摘要
 ```
 
 ### 元文本
 原文本是文章的主体，可以是html或markdown格式，统一放在siteroot/articles/下。
 
 文件命名必须与文章元配置中的id匹配。假设文章id为“my-first-article”，html文件命名为“my-first-article.html.text”，markdown文件命名为“my-first-article.markdown.text”。注意html文件只需包含文章主体的html标签，不需包含head、body等标签内容。
+
+## 网站结构
++ 首页
+```bash
+    http(s)://yourdomain/
+```
+首页显示文章列表。每篇文章只显示摘要部分。同时首页还包含常用标签索引。
+
++ 标签页
+```bash
+    http(s)://yourdomain/tag.html
+```
+标签页面显示所有标签索引以及分标签文章列表（只显示标题）。
+
++ 文章页
+```bash
+    http(s)://yourdomain/aritcles/[id].html
+```
+文章页面显示文章主要内容。
+
++ RSS订阅
+```bash
+    http(s)://yourdomain/rss.xml
+```
+可以通过这个url订阅你的博客。
