@@ -118,4 +118,4 @@ simplog没有插件机制，但默认支持代码高亮（通过google-code-pret
 推荐使用github部署，当然你可以用任何方式将生成的站点更新到web服务器相应目录下。
 
 ### 更多参考
-关于这份文档没有详尽之处，可以参考[https://github.com/ericzhang-cn/blog.codinglabs.org](https://github.com/ericzhang-cn/blog.codinglabs.org)。这个项目是我用simplog生成的博客，其中包含了相关的配置。
+关于这份文档没有详尽之处，可以参考 [https://github.com/ericzhang-cn/blog.codinglabs.org](https://github.com/ericzhang-cn/blog.codinglabs.org) 。这个项目是我用simplog生成的博客，其中包含了相关的配置。
