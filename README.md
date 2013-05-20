@@ -95,4 +95,14 @@ abstract - 文章摘要
 ```bash
 # 生成整个网站
 make
+# 只生成首页
+make index
+# 只生成文章（默认只重新生成有改动的文章）
+make articles
+# 只生成tag页
+make tag
+# 只生成rss
+make rss
+# 清除所有生成的内容（不会清除配置和元文本）
+make clean
 ```
