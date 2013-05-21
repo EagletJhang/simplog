@@ -114,6 +114,30 @@ simplog没有提供任何皮肤、模板之类的概念或机制，整个站点�
 ### 关于插件
 simplog没有插件机制，但默认支持代码高亮（通过google-code-prettify实现）和LaTeX数学公式渲染（通过MathJax实现）。
 
+#### LaTeX数学公式
+html和markdown的区别在与markdown对于“\”等特殊标签需要转义。
+```bash
+# html元文本
+\(T(n)=c\_1(\frac{1+\sqrt{5}}{2})^n+c\_2(\frac{1-\sqrt{5}}{2})^n\) # 内嵌
+\[T(n)=c\_1(\frac{1+\sqrt{5}}{2})^n+c\_2(\frac{1-\sqrt{5}}{2})^n\] # 单行
+# markdown元文本
+\\(T(n)=c\_1(\frac{1+\sqrt{5}}{2})^n+c\_2(\frac{1-\sqrt{5}}{2})^n\\) # 内嵌
+\\[T(n)=c\_1(\frac{1+\sqrt{5}}{2})^n+c\_2(\frac{1-\sqrt{5}}{2})^n\\] # 单行
+```
+
+#### 代码高亮
+代码高亮使用<pre>标签，配置“prettyprint”的class，系统会自动识别语言并高亮
+```bash
+<pre class="prettyprint">function f(x) {
+    return function(y) {
+        return x + y;
+    };
+}
+
+var lam = f(7);
+console.log(lam(2));</pre>
+```
+
 ### 关于部署
 推荐使用github部署，当然你可以用任何方式将生成的站点更新到web服务器相应目录下。
 
