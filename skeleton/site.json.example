@@ -1,28 +1,30 @@
 {
-    "title": "Simplog",
-    "subtitle": "Yet another blog",
-    "link": "http://yoursite",
+    "title": "Simplog",             // 博客主标题
+    "subtitle": "Yet another blog", // 博客副标题
+    "link": "http://yoursite",      // 博客首页URL
+    /* meta配置最终页面的<meta>相关标签 */
     "meta": {
-        "description": "简单的静态博客搭建系统",
-        "keywords": ["Simplog","简单","博客"],
-        "author": "Simplog"
+        "description": "简单的静态博客搭建系统", // meta的description
+        "keywords": ["Simplog","简单","博客"],   // meta的keywords
+        "author": "Simplog"                      // meta的author
     },
     "master": {
-        "name": "",
-        "about": "",
-        "email": "",
-        "weibo": ""
+        "name": "",  // 博主用户名
+        "about": "", // 博主简介
+        "email": "", // 博主email
+        "weibo": ""  // 博主新浪微博
     },
+    /* rss订阅配置 */
     "rss": {
-        "title": "Simplog",
-        "desc": "Yet another blog",
-        "lang": "zh-cn",
-        "max": 20
+        "title": "Simplog",         // rss名称
+        "desc": "Yet another blog", // rss描述
+        "lang": "zh-cn",            // rss语言
+        "max": 20                   // 向订阅器返回的条数
     },
     "copyright": {
-        "owner": "Simplog",
-        "beginYear": "2012",
-        "endYear": "2013",
-        "ICP": "京ICP备12345678-1号"
+        "owner": "Simplog",          // 博客属主
+        "beginYear": "2012",         // 博客创立年份
+        "endYear": "2013",           // 当前年份
+        "ICP": "京ICP备12345678-1号" // 备案号（中国特色-_-|||）
     }
 }
