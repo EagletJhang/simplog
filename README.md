@@ -126,7 +126,7 @@ html和markdown的区别在与markdown对于“\”等特殊标签需要转义�
 ```
 
 #### 代码高亮
-代码高亮使用<pre>标签，配置“prettyprint”的class，系统会自动识别语言并高亮
+代码高亮使用pre标签，配置“prettyprint”的class，系统会自动识别语言并高亮
 ```bash
 <pre class="prettyprint">function f(x) {
     return function(y) {
