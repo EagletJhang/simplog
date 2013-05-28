@@ -2,7 +2,7 @@
 
 // 引入必要模块
 var fs = require('fs');
-var _ = require('./underscore');
+var _ = require('underscore');
 
 // 读取配置信息
 var siteRoot = process.argv[2];

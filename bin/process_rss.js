@@ -2,8 +2,8 @@
 
 // 引入必要模块
 var fs = require('fs');
-var moment = require('./moment');
-var markdown = require('./markdown');
+var moment = require('moment');
+var marked = require('marked');
 
 // 读取配置信息
 var siteRoot = process.argv[2];
@@ -50,7 +50,7 @@ articlesConfig.articles.slice(0, globalConfig.rss.max).forEach(function (article
         content = fs.readFileSync(siteRoot + '/articles/' + article.id + '.html.text', 'utf8');
     } else if (fs.existsSync(siteRoot + '/articles/' + article.id + '.markdown.text')) {
         content = fs.readFileSync(siteRoot + '/articles/' + article.id + '.markdown.text', 'utf8');
-        content = markdown.toHTML(content);
+        content = marked(content);
     }
 
     content = content.replace(/&(?!\w+;)/g, '&amp;')
