@@ -18,7 +18,7 @@ if (fs.existsSync(siteRoot + '/site.json') &&
 }
 
 // 检测并读取模板文件
-if (fs.existsSync('../skeleton/rss.template')) {
+if (fs.existsSync(siteRoot + '/rss.template')) {
     var template = fs.readFileSync('../skeleton/rss.template', 'utf8');
     var templateStat = fs.statSync('../skeleton/rss.template');
     console.log('[PROCESSING]Read rss template completed.');
