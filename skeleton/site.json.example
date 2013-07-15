@@ -2,7 +2,6 @@
     "title": "Simplog", // 博客主标题
     "subtitle": "Yet another blog", // 博客副标题
     "link": "http://yoursite", // 博客首页URL
-    /* meta配置最终页面的<meta>相关标签 */
     "meta": {
         "description": "简单的静态博客搭建系统", // meta的description
         "keywords": ["Simplog","简单","博客"], // meta的keywords
@@ -14,12 +13,11 @@
         "email": "", // 博主email
         "weibo": "" // 博主新浪微博
     },
-    /* rss订阅配置 */
     "rss": {
         "title": "Simplog", // rss名称
         "desc": "Yet another blog", // rss描述
         "lang": "zh-cn", // rss语言
-        "max": 20 // 向订阅器返回的条数
+        "max": 10 // 向订阅器返回的条数
     },
     "copyright": {
         "owner": "Simplog", // 博客属主

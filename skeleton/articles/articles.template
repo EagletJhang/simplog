@@ -27,7 +27,7 @@
                     <a href="{%= ARTICLE_LINK %}">{%= ARTICLE_TITLE %}</a>
                 </div>
                 <div id="article-meta">
-                    作者 {%= ARTICLE_AUTHOR %} | 发布于 {%= ARTICLE_POSTED_ON %} | 最后更新 {%= ARTICLE_UPDATED_ON %}
+                    作者 {%= ARTICLE_AUTHOR %} | 发布于 {%= ARTICLE_POSTED_ON %}
                 </div>
                 <div id="article-tags">
                     {%= ARTICLE_TAGS %}
