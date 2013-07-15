@@ -33,7 +33,7 @@ var t = template;
 t = t.replace(/{%= TITLE %}/g, globalConfig.rss.title);
 t = t.replace(/{%= LINK %}/g, globalConfig.link);
 t = t.replace(/{%= DESC %}/g, globalConfig.rss.desc);
-t = t.replace(/{%= LAST_BUILD_DATE %}/g, moment().format('ddd, DD MMM YYYY HH:mm:ss') + ' GMT');
+t = t.replace(/{%= LAST_BUILD_DATE %}/g, moment().format('ddd, DD MMM YYYY HH:mm:ss') + ' +0800');
 t = t.replace(/{%= LANG %}/g, globalConfig.rss.lang);
 
 var items = '';
@@ -43,7 +43,7 @@ articlesConfig.articles.slice(0, globalConfig.rss.max).forEach(function (article
     items += '<link>' + globalConfig.link + '/articles/' + article.id + '.html?utm_source=rss&amp;utm_medium=rss</link>\n';
     items += '<guid>' + globalConfig.link + '/articles/' + article.id + '.html</guid>\n';
     items += '<author>' + globalConfig.master.email + ' ' + globalConfig.master.name + '</author>\n';
-    items += '<pubDate>' + moment(article.postedOn).format('ddd, DD MMM YYYY HH:mm:ss') + ' GMT</pubDate>\n';
+    items += '<pubDate>' + moment(article.postedOn).format('ddd, DD MMM YYYY HH:mm:ss') + ' +0800</pubDate>\n';
 
     var content = '';
     if (fs.existsSync(siteRoot + '/articles/' + article.id + '.html.text')) {
