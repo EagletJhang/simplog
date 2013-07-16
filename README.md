@@ -11,7 +11,7 @@ simplog是一个非常简单的博客搭建工具，与wordpress等动态博客�
 
 4. 建立siteroot/articles/helloworld.markdown.txt文件，并在其中输入任意内容。
 
-5. 打开siteroot/articles/articles.json，删除其中内容，修改为：
+5. 打开siteroot/articles/articles.json，其中内容默认为：
 ```javascript
     {
         "articles": [
@@ -28,15 +28,21 @@ simplog是一个非常简单的博客搭建工具，与wordpress等动态博客�
     }
 ```
 
-6. 进入simplog/bin/目录，将其中的Makefile.example重命名为Makefile。
+6. 进入simplog目录下，运行
+```bash
+    npm install
+```
+安装nodejs依赖包
 
-7. 打开Makefile，将第一行
+7. 进入simplog/bin/目录，将其中的Makefile.example重命名为Makefile。
+
+8. 打开Makefile，将第一行
 ```bash
 	ROOT=/path/to/your/website/root
 ```
 改为指向siteroot目录。
 
-8. 运行如下命令
+9. 运行如下命令
 ```bash
 	make
 ```
