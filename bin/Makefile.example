@@ -3,16 +3,16 @@ ROOT=/path/to/your/website/root
 all: index tag rss articles
 
 index:
-	node process_index.js $(ROOT)
+	node simplog.js index $(ROOT)
 	
 tag:
-	node process_tag.js $(ROOT)
+	node simplog.js tag $(ROOT)
 
 rss:
-	node process_rss.js $(ROOT)
+	node simplog.js rss $(ROOT)
 
 articles:
-	node process_articles.js $(ROOT)
+	node simplog.js articles $(ROOT)
 
 clean:
 	rm -f $(ROOT)/index.html
@@ -20,3 +20,5 @@ clean:
 	rm -f $(ROOT)/articles/*.html
 	rm -f $(ROOT)/pages/*.html
 	rm -f $(ROOT)/categories/*.html
+
+test:

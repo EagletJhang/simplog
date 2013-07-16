@@ -1,9 +1,11 @@
 'use strict';
 
-var artPsr= require('articles_processer');
-var idxPsr= require('index_processer');
-var rssPsr= require('rss_processer');
-var tagPsr= require('tag_processer');
+var fs = require('fs');
+
+var artPsr= require('./articles_processer');
+var idxPsr= require('./index_processer');
+var rssPsr= require('./rss_processer');
+var tagPsr= require('./tag_processer');
 
 var cmd = process.argv[2];
 

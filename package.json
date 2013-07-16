@@ -2,7 +2,7 @@
   "name": "simplog",
   "version": "0.0.1",
   "description": "create simple blog",
-  "main": "simplog.js",
+  "main": "bin/simplog.js",
   "dependencies": {
     "marked": "0.2.8",
     "moment": "2.0.0",
@@ -10,9 +10,12 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "make test"
+    "test": "make -f bin/Makefile test"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ericzhang-cn/simplog.git"
+  },
   "author": "Eric Zhang",
   "license": "BSD"
 }
