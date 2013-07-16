@@ -1,13 +1,13 @@
 {
     "articles": [
         {
-            "id": "article-1", // 文章ID
-            "title": "第一篇文章", // 文章标题
-            "postedOn": "2013-01-06", // 文章发布时间
-            "author": "Bob", // 文章作者
-            "tags": ["football", "basketball"], // 文章标签
-            "category": "", // 文章类型
-            "abstract": "这是第一篇文章" // 文章摘要
+            "id": "helloworld",
+            "title": "Hello World",
+            "postedOn": "2013-01-01",
+            "author": "My Name",
+            "tags": ["hello", "world"],
+            "category": "",
+            "abstract": "This is my first article!"
         }
     ]
 }
